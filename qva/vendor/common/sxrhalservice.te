@@ -28,6 +28,7 @@
 #Define Domain
 type vendor_sxrhalservice_qti, domain;
 type vendor_sxrhalservice_qti_exec, exec_type, vendor_file_type, file_type;
+type vendor_sxrhalservice_client, exec_type, vendor_file_type, file_type;
 
 #Allow for transition from init domain to sxrhalservice
 init_daemon_domain(vendor_sxrhalservice_qti)

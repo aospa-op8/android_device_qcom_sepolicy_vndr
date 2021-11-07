@@ -31,11 +31,8 @@ type vendor_qvrd_vndr_exec, vendor_file_type, exec_type, file_type;
 init_daemon_domain(vendor_qvrd_vndr)
 
 hal_server_domain(vendor_qvrd_vndr, vendor_hal_qvrservice_qti)
-binder_call(vendor_hal_qvrservice_qti_client, vendor_hal_qvrservice_qti_server)
-binder_call(vendor_hal_qvrservice_qti_server, vendor_hal_qvrservice_qti_client)
 
 allow vendor_hal_qvrservice_qti_client vendor_hal_qvrd_service:service_manager find;
-add_service(vendor_hal_qvrservice_qti_server, vendor_hal_qvrd_service)
 
 allow vendor_qvrd_vndr vendor_hal_qvrservice_qti_socket_client:unix_stream_socket { getopt read setopt shutdown write };
 allow vendor_hal_qvrservice_qti_socket_fd_use_client vendor_qvrd_vndr: fd use;
